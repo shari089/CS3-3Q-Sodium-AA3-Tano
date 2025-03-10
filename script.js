@@ -2,18 +2,24 @@ function verifyMessage() {
   let message = prompt("Enter a message");
   let print = document.getElementById('result');
 
-  if(message.indexOf("aI") !== -1 || message.indexOf("Ai")) !== -1 {
+  if (message.includes("aI") || message.includes("Ai")) {
       print.textContent = " is tampered with";
-  } else if(message.indexOf("fR") !== -1 || message.indexOf("Fr")) !== -1 {
+  } 
+  else if (message.includes("fR") || message.includes("Fr")) {
       print.textContent = " is tampered with";
-  } else if(message.indexOf("FR") !== -1 && message.indexOf("AI") !== -1 ) {
+  } 
+  else if (message.includes("FR") && message.includes("AI")) {
       print.textContent = " is legitimate";
-  } else if(message.indexOf("AI") !== -1 ) {
+  } 
+  else if (message.includes("AI")) {
       print.textContent = " is legitimate";
-  } else if(message.indexOf("FR") !== -1 ) {
+  } 
+  else if (message.includes("FR")) {
       print.textContent = " is legitimate";
-  } else {
+  } 
+  else {
       print.textContent = " is not yet encoded";
   }
-  document.getElementById('result').innerHTML = "The message" + " " + message + " " + print.textContent;
+
+  document.getElementById('result').innerHTML = "The message " + message + print.textContent;
 }
